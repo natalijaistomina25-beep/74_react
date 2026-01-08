@@ -1,0 +1,17 @@
+.feedback {
+  padding: 20px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.counter {
+  font-weight: bold;
+}
+
+.reset {
+  margin-top: 10px;
+  width: 100%;
+}

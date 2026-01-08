@@ -1,37 +1,28 @@
 import { useState } from "react";
 import Button from "../Button/Button";
+import "./Feedback.css";
 
 const Feedback = () => {
   const [likes, setLikes] = useState(0);
   const [dislikes, setDislikes] = useState(0);
 
   return (
-    <div
-      style={{
-        padding: "20px",
-        backgroundColor: "white",
-        display: "flex",
-        alignItems: "center",
-        gap: "10px",
-        flexWrap: "wrap"
-      }}
-    >
-      {/* Like section */}
-      <span>{likes}</span>
-      <Button text="Like" onClick={() => setLikes(likes + 1)} />
+    <div className="feedback">
+      <span className="counter">{likes}</span>
+      <Button text="Like" onClick={() => setLikes(prev => prev + 1)} />
 
-      {/* Dislike section */}
-      <Button text="Dislike" onClick={() => setDislikes(dislikes + 1)} />
-      <span>{dislikes}</span>
+      <Button text="Dislike" onClick={() => setDislikes(prev => prev + 1)} />
+      <span className="counter">{dislikes}</span>
 
-      {/* Reset button */}
-      <Button
-        text="Reset Results"
-        onClick={() => {
-          setLikes(0);
-          setDislikes(0);
-        }}
-      />
+      <div className="reset">
+        <Button
+          text="Reset Results"
+          onClick={() => {
+            setLikes(0);
+            setDislikes(0);
+          }}
+        />
+      </div>
     </div>
   );
 };
